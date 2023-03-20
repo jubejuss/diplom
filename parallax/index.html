@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+        }
+
+        .bg-element {
+            /* position: absolute;*/
+            width: 100%;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-image: url('https://plus.unsplash.com/premium_photo-1663126481352-519e116a981d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+        }
+
+        .fg-element {
+            height: 100vh;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bg-element"></div>
+        <div class="fg-element">See on esiplaan</div>
+    </div>
+    <script>const bgElement = document.querySelector('.bg-element');
+        const fgElement = document.querySelector('.fg-element');
+
+        window.addEventListener('scroll', () => {
+            const scrollAmount = window.pageYOffset;
+
+            // Adjust the position of the background element based on scroll speed
+            bgElement.style.transform = `translateY(-${scrollAmount * 0.2}px)`;
+
+            // Adjust the position of the foreground element based on scroll speed
+            fgElement.style.transform = `translateY(-${scrollAmount * 0.5}px)`;
+        });
+    </script>
+</body>
+
+</html>

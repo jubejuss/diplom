@@ -1,0 +1,91 @@
+@import url('typography.css');
+
+body {
+  background-color: #0e0219;
+  margin: 0;
+}
+
+header {
+  height: 100vh;
+  background-image: url('img/headerback.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background-image: url(img/headeroverlay.svg);
+  mix-blend-mode: multiply;
+  background-position: 43% 22%;
+  background-size: 193%;
+  opacity: 1; /* set initial opacity to 1 */
+  -webkit-filter: blur(0);
+  filter: blur(0); /* set initial blur to 0 */
+  transition: opacity 0.5s, -webkit-filter 0.5s;
+  transition: opacity 0.5s, filter 0.5s;
+  transition: opacity 0.5s, filter 0.5s, -webkit-filter 0.5s; /* add transition for opacity and filter */
+  z-index: -1;
+}
+
+header.fade::before {
+  opacity: 0; /* fade out the header */
+  -webkit-filter: blur(20px);
+  filter: blur(20px); /* increase the blur effect on fade */
+}
+
+.hero {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-in-main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content {
+  color: #f6ecd9;
+  display: flex;
+  max-width: 1000px;
+  padding-top: 4rem;
+  gap: 4rem;
+}
+
+.hero-left {
+  word-break: keep-all;
+}
+
+.hero-right {
+  padding-top: 8rem;
+}
+
+main {
+  position: relative;
+  /* padding: 4rem 2rem; */
+  min-height: 100vh;
+  top: 100vh;
+
+  color: #f6ecd9;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  max-width: 60ch;
+  margin: 0 auto;
+}
