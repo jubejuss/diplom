@@ -1,3 +1,4 @@
+@import url('reset.css');
 @import url('typography.css');
 
 body {
@@ -43,6 +44,7 @@ header.fade::before {
   width: 100%;
   display: flex;
   justify-content: center;
+  top: 0;
 }
 
 .hero-in-main {
